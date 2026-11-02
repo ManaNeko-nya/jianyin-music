@@ -3,12 +3,30 @@
 /oh_modules
 /.hvigor
 **/build
+**/outputs
+**/intermediates
+**/loader_out*
+**/.preview
+**/.cache
 .cxx
 /.clangd
 /.clang-format
 /.clang-tidy
 **/.test
 /.appanalyzer
+
+# Compiled application packages — never commit
+*.hap
+*.app
+*.apk
+*.aab
+*.hsp
+*.har
+*.abc
+*.dex
+*.class
+*.o
+*.a
 
 # Local IDE / machine settings
 /.idea
