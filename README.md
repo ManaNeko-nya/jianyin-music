@@ -1,5 +1,9 @@
 # 简音 / JianYin
 
+> **AI 屑作警告！讨厌 AI 的立即退出（？）**
+>
+> **Warning: AI slop.** If you hate AI, please leave now (?)
+
 **本项目完全由 AI 开发，仅供作者自己自用。**
 
 **This project was developed entirely by AI and is maintained for the author's personal use.**
