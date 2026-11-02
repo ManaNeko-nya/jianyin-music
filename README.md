@@ -4,12 +4,25 @@
 
 **This project was developed entirely by AI and is maintained for the author's personal use.**
 
-简音是一个自托管音乐库的前端 App：用 ArkUI-X 和 ArkTS 编写，同时构建 HarmonyOS 与 Android 版本。它希望把自托管音乐库的使用体验做得像日常流媒体一样顺手——打开就能看到封面、推荐、专辑和艺人，播放、队列、歌词、搜索、歌单都在熟悉的位置。界面克制、动画流畅、信息层级清楚；音乐数据留在你自己的服务器上，不绑定云账号，也不锁定单一后端。
+简音是一个 HarmonyOS / Android 双端音乐播放器，用 ArkUI-X 和 ArkTS 编写，一套界面同时运行在两个平台。它面向自托管音乐库：打开就能看到封面、推荐、专辑和艺人，播放、队列、歌词、搜索、歌单都在熟悉的位置。界面克制、动画流畅、信息层级清楚；音乐数据留在你自己的服务器上，不绑定云账号，也不锁定单一后端。
+
+## 预览
+
+<table>
+  <tr>
+    <td align="center"><img src="screenshots/home.jpg" width="140" alt="首页"><br><sub>首页</sub></td>
+    <td align="center"><img src="screenshots/library-songs.jpg" width="140" alt="曲库 · 歌曲"><br><sub>曲库 · 歌曲</sub></td>
+    <td align="center"><img src="screenshots/library-albums.jpg" width="140" alt="曲库 · 专辑"><br><sub>曲库 · 专辑</sub></td>
+    <td align="center"><img src="screenshots/playlist.jpg" width="140" alt="歌单"><br><sub>歌单</sub></td>
+    <td align="center"><img src="screenshots/album.jpg" width="140" alt="专辑"><br><sub>专辑</sub></td>
+    <td align="center"><img src="screenshots/now-playing.jpg" width="140" alt="播放器"><br><sub>播放器</sub></td>
+  </tr>
+</table>
 
 ## 支持的后端
 
-- **GuoBeng**：本项目配套的自有后端（原 MusicServer）。
-- **Navidrome / Subsonic**：支持标准 Subsonic API 的自托管音乐服务。
+- **GuoBeng**：本项目配套的自有后端（原 MusicServer），[GitHub 仓库](https://github.com/ManaNeko-nya/guobeng-music-backend)。
+- **Navidrome / Subsonic**：支持标准 Subsonic API 的自托管音乐服务，[Navidrome](https://github.com/navidrome/navidrome)。
 - **游客模式**：未开放登录的服务也可以直接浏览；评论、歌单、添加到歌单等依赖账号的功能会自动隐藏。
 - 中英双语：设置中可跟随系统，或手动选择中文 / English；语言或服务器切换后需要重启 App。
 
