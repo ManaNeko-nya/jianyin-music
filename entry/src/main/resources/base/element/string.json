@@ -1,0 +1,908 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "简音主模块"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "简音 - MusicServer 客户端"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "简音"
+    },
+    {
+      "name": "s_unknown_artist",
+      "value": "未知艺人"
+    },
+    {
+      "name": "s_failed_to_load",
+      "value": "加载失败"
+    },
+    {
+      "name": "s_album",
+      "value": "专辑"
+    },
+    {
+      "name": "s_select_all",
+      "value": "全选"
+    },
+    {
+      "name": "s_play_all",
+      "value": "播放全部"
+    },
+    {
+      "name": "s_playlist",
+      "value": "歌单"
+    },
+    {
+      "name": "s_added_to_queue",
+      "value": "已加入播放列表"
+    },
+    {
+      "name": "s_more",
+      "value": "更多"
+    },
+    {
+      "name": "s_library",
+      "value": "曲库"
+    },
+    {
+      "name": "s_profile",
+      "value": "我的"
+    },
+    {
+      "name": "s_deselect_all",
+      "value": "取消全选"
+    },
+    {
+      "name": "s_songs",
+      "value": "歌曲"
+    },
+    {
+      "name": "s_unknown_album",
+      "value": "未知专辑"
+    },
+    {
+      "name": "s_sign_in",
+      "value": "登录账户"
+    },
+    {
+      "name": "s_retry",
+      "value": "重试"
+    },
+    {
+      "name": "s_next",
+      "value": "下一首"
+    },
+    {
+      "name": "s_home",
+      "value": "首页"
+    },
+    {
+      "name": "s_failed_to_load_songs",
+      "value": "加载歌曲失败"
+    },
+    {
+      "name": "s_playlist_name_cannot_be_empty",
+      "value": "歌单名称不能为空"
+    },
+    {
+      "name": "s_failed_to_load_lyrics",
+      "value": "歌词加载失败"
+    },
+    {
+      "name": "s_done",
+      "value": "完成"
+    },
+    {
+      "name": "s_tracks",
+      "value": "曲目"
+    },
+    {
+      "name": "s_search",
+      "value": "搜索"
+    },
+    {
+      "name": "s_queue",
+      "value": "播放列表"
+    },
+    {
+      "name": "s_comments",
+      "value": "评论"
+    },
+    {
+      "name": "s_duration",
+      "value": "时长"
+    },
+    {
+      "name": "s_add_to_playlist",
+      "value": "添加到歌单"
+    },
+    {
+      "name": "s_rename_playlist",
+      "value": "重命名歌单"
+    },
+    {
+      "name": "s_new_playlist",
+      "value": "新建歌单"
+    },
+    {
+      "name": "s_appearance",
+      "value": "外观主题"
+    },
+    {
+      "name": "s_try_another_keyword",
+      "value": "换一个关键词试试"
+    },
+    {
+      "name": "s_add_to_queue",
+      "value": "加入播放列表"
+    },
+    {
+      "name": "s_add_to_another_playlist",
+      "value": "添加到其他歌单"
+    },
+    {
+      "name": "s_cancel",
+      "value": "取消"
+    },
+    {
+      "name": "s_close",
+      "value": "关闭"
+    },
+    {
+      "name": "s_sign_in_to_view_your_playlists",
+      "value": "登录后查看\n你的歌单"
+    },
+    {
+      "name": "s_sign_in_to_sync_favorites_and_playlist_order",
+      "value": "登录账号后同步收藏列表与歌单顺序。"
+    },
+    {
+      "name": "s_sign_in_2",
+      "value": "去登录"
+    },
+    {
+      "name": "s_pause",
+      "value": "暂停"
+    },
+    {
+      "name": "s_play",
+      "value": "播放"
+    },
+    {
+      "name": "s_failed_to_create_playlist",
+      "value": "创建歌单失败"
+    },
+    {
+      "name": "s_failed_to_save_playlist_order",
+      "value": "保存歌单顺序失败"
+    },
+    {
+      "name": "s_rename_failed",
+      "value": "重命名失败"
+    },
+    {
+      "name": "s_failed_to_delete_playlist",
+      "value": "删除歌单失败"
+    },
+    {
+      "name": "s_failed_to_save_track_order",
+      "value": "保存歌曲顺序失败"
+    },
+    {
+      "name": "s_search_failed",
+      "value": "搜索失败"
+    },
+    {
+      "name": "s_sign_in_failed",
+      "value": "登录失败"
+    },
+    {
+      "name": "s_failed_to_connect_in_guest_mode",
+      "value": "游客模式连接失败"
+    },
+    {
+      "name": "s_registration_failed",
+      "value": "注册失败"
+    },
+    {
+      "name": "s_failed_to_load_comments",
+      "value": "评论加载失败"
+    },
+    {
+      "name": "s_sign_in_to_comment",
+      "value": "登录后才能发表评论"
+    },
+    {
+      "name": "s_comment_posted",
+      "value": "评论已发布"
+    },
+    {
+      "name": "s_failed_to_send_comment",
+      "value": "评论发送失败"
+    },
+    {
+      "name": "s_search_songs_albums",
+      "value": "搜索歌曲、专辑"
+    },
+    {
+      "name": "s_no_songs",
+      "value": "暂无歌曲"
+    },
+    {
+      "name": "s_this_album_has_no_songs",
+      "value": "专辑还没有歌曲"
+    },
+    {
+      "name": "s_upload_audio_in_the_admin_panel_to_play",
+      "value": "在管理端上传音频后即可播放"
+    },
+    {
+      "name": "s_unknown_year",
+      "value": "未知年份"
+    },
+    {
+      "name": "s_no_genre",
+      "value": "未标记曲风"
+    },
+    {
+      "name": "s_artist",
+      "value": "艺人"
+    },
+    {
+      "name": "s_no_public_albums_yet",
+      "value": "还没有公开专辑"
+    },
+    {
+      "name": "s_albums_by_this_artist_will_appear_here",
+      "value": "该艺人名下的专辑会出现在这里"
+    },
+    {
+      "name": "s_no_tracks_yet",
+      "value": "暂无参与歌曲"
+    },
+    {
+      "name": "s_collaborations_by_this_artist_will_appear_here",
+      "value": "该艺人参与的合作曲也会出现在这里"
+    },
+    {
+      "name": "s_for_you",
+      "value": "为你推荐"
+    },
+    {
+      "name": "s_all_albums",
+      "value": "全部专辑"
+    },
+    {
+      "name": "s_recently_added",
+      "value": "最近上架"
+    },
+    {
+      "name": "s_popular_albums",
+      "value": "热门专辑"
+    },
+    {
+      "name": "s_select_songs",
+      "value": "选择歌曲"
+    },
+    {
+      "name": "s_no_songs_in_the_library",
+      "value": "曲库还没有歌曲"
+    },
+    {
+      "name": "s_they_will_appear_after_the_admin_adds_them",
+      "value": "等待管理员上架后会自动出现在这里"
+    },
+    {
+      "name": "s_no_albums_in_the_library",
+      "value": "曲库还没有专辑"
+    },
+    {
+      "name": "s_they_will_appear_after_the_admin_adds_them_2",
+      "value": "管理员上架专辑后会出现在这里"
+    },
+    {
+      "name": "s_playback_speed",
+      "value": "播放速度"
+    },
+    {
+      "name": "s_collapse",
+      "value": "收起"
+    },
+    {
+      "name": "s_swipe_left_or_right_for_lyrics",
+      "value": "左右滑动查看歌词"
+    },
+    {
+      "name": "s_no_lyrics",
+      "value": "暂无歌词"
+    },
+    {
+      "name": "s_this_track_has_no_lrc_lyrics",
+      "value": "这首歌还没有上传 LRC 歌词"
+    },
+    {
+      "name": "s_previous",
+      "value": "上一首"
+    },
+    {
+      "name": "s_lyrics",
+      "value": "歌词"
+    },
+    {
+      "name": "s_queue_2",
+      "value": "列表"
+    },
+    {
+      "name": "s_no_comments_yet",
+      "value": "还没有评论"
+    },
+    {
+      "name": "s_share_your_thoughts",
+      "value": "说说你听完这首歌的感受"
+    },
+    {
+      "name": "s_loading",
+      "value": "加载中…"
+    },
+    {
+      "name": "s_view_more_comments",
+      "value": "查看更多评论"
+    },
+    {
+      "name": "s_sign_in_to_comment_2",
+      "value": "登录后可以发表评论"
+    },
+    {
+      "name": "s_say_something",
+      "value": "说点什么…"
+    },
+    {
+      "name": "s_listen",
+      "value": "听"
+    },
+    {
+      "name": "s_view_album",
+      "value": "查看专辑"
+    },
+    {
+      "name": "s_choose_a_playlist",
+      "value": "选择目标歌单"
+    },
+    {
+      "name": "s_just_now",
+      "value": "刚刚"
+    },
+    {
+      "name": "s_failed_to_remove_from_playlist",
+      "value": "移出歌单失败"
+    },
+    {
+      "name": "s_this_playlist_has_no_songs",
+      "value": "这个歌单还没有歌曲"
+    },
+    {
+      "name": "s_long_press_a_song_in_the_library_to_add_it",
+      "value": "在曲库中长按歌曲即可加入歌单"
+    },
+    {
+      "name": "s_save",
+      "value": "保存"
+    },
+    {
+      "name": "s_tap_songs_to_select",
+      "value": "点击歌曲进行选择"
+    },
+    {
+      "name": "s_long_press_a_song_to_reorder",
+      "value": "长按歌曲可拖动排序"
+    },
+    {
+      "name": "s_no_playlists_yet",
+      "value": "还没有歌单"
+    },
+    {
+      "name": "s_tap_in_the_top_right_to_create_your_first_playli",
+      "value": "点击右上角加号创建你的第一个歌单"
+    },
+    {
+      "name": "s_create",
+      "value": "创建"
+    },
+    {
+      "name": "s_sign_in_to_sync_playlists_and_favorites",
+      "value": "登录后同步歌单与收藏"
+    },
+    {
+      "name": "s_settings",
+      "value": "设置"
+    },
+    {
+      "name": "s_about_jianyin",
+      "value": "关于简音"
+    },
+    {
+      "name": "s_version_server_and_client_information",
+      "value": "版本、服务器与客户端信息"
+    },
+    {
+      "name": "s_create_account",
+      "value": "创建账户"
+    },
+    {
+      "name": "s_register_to_sync_playlists_and_favorites",
+      "value": "注册后即可同步歌单与收藏。"
+    },
+    {
+      "name": "s_server_account_and_tokens_are_stored_on_this_dev",
+      "value": "服务器、账号与登录令牌都保存在本机，可随时切换。"
+    },
+    {
+      "name": "s_service_type",
+      "value": "服务类型"
+    },
+    {
+      "name": "s_quick_fill",
+      "value": "快捷填充"
+    },
+    {
+      "name": "s_login_record_deleted",
+      "value": "已删除该登录记录"
+    },
+    {
+      "name": "s_server_address",
+      "value": "服务器地址"
+    },
+    {
+      "name": "s_username",
+      "value": "用户名"
+    },
+    {
+      "name": "s_account",
+      "value": "账号"
+    },
+    {
+      "name": "s_choose_a_username",
+      "value": "设置一个用户名"
+    },
+    {
+      "name": "s_your_account",
+      "value": "你的账号"
+    },
+    {
+      "name": "s_nickname",
+      "value": "昵称"
+    },
+    {
+      "name": "s_optional",
+      "value": "可留空"
+    },
+    {
+      "name": "s_password",
+      "value": "密码"
+    },
+    {
+      "name": "s_enter_password",
+      "value": "输入密码"
+    },
+    {
+      "name": "s_register_and_sign_in",
+      "value": "注册并登录"
+    },
+    {
+      "name": "s_sign_in_3",
+      "value": "登录"
+    },
+    {
+      "name": "s_browse_only_guest_mode",
+      "value": "仅浏览（游客模式）"
+    },
+    {
+      "name": "s_already_have_an_account_sign_in",
+      "value": "已有账号？返回登录"
+    },
+    {
+      "name": "s_no_account_create_one",
+      "value": "没有账号？创建一个"
+    },
+    {
+      "name": "s_super_admin",
+      "value": "超级管理员"
+    },
+    {
+      "name": "s_admin",
+      "value": "管理员"
+    },
+    {
+      "name": "s_user",
+      "value": "普通用户"
+    },
+    {
+      "name": "s_sign_out",
+      "value": "退出登录"
+    },
+    {
+      "name": "s_search_your_library",
+      "value": "搜索你的音乐库"
+    },
+    {
+      "name": "s_enter_a_song_album_or_artist",
+      "value": "输入歌名、专辑名或艺人名"
+    },
+    {
+      "name": "s_no_songs_found",
+      "value": "没有找到歌曲"
+    },
+    {
+      "name": "s_open_github",
+      "value": "打开 GitHub"
+    },
+    {
+      "name": "s_jianyin",
+      "value": "简音"
+    },
+    {
+      "name": "s_version_1_0_0",
+      "value": "版本 1.0.0"
+    },
+    {
+      "name": "s_a_music_frontend_that_feels_closer_to_a_mainstre",
+      "value": "使用体验更像常规流媒体的音乐前端APP"
+    },
+    {
+      "name": "s_our_philosophy_is_to_make_the_experience_feel_cl",
+      "value": "简音希望把自托管音乐库的使用体验做得像日常流媒体一样顺手：打开就能看到封面、推荐、专辑和艺人，播放、队列、歌词、搜索、歌单都在熟悉的位置。界面克制、动画流畅、信息层级清楚；音乐数据留在自己的服务器上，不绑定云账号，也不锁定单一后端。GuoBeng 与 Navidrome/Subsonic 都可以接入，未开放登录的服务器也可以用游客模式直接浏览。"
+    },
+    {
+      "name": "s_open_source_backends",
+      "value": "开源后端"
+    },
+    {
+      "name": "s_about",
+      "value": "关于"
+    },
+    {
+      "name": "s_remove_from_playlist",
+      "value": "移出歌单"
+    },
+    {
+      "name": "s_failed_to_load_playlists",
+      "value": "加载歌单失败"
+    },
+    {
+      "name": "s_no_other_playlists_create_one_on_the_playlists_p",
+      "value": "没有其他歌单，请先在歌单页创建。"
+    },
+    {
+      "name": "s_remove_from_this_playlist",
+      "value": "从该歌单移出"
+    },
+    {
+      "name": "s_playlist_name",
+      "value": "歌单名称"
+    },
+    {
+      "name": "s_name_your_playlist",
+      "value": "给歌单起个名字"
+    },
+    {
+      "name": "s_the_playlist_will_be_deleted_the_songs_stay_in_y",
+      "value": "歌单会被删除，歌曲本身不会从音乐库移除。"
+    },
+    {
+      "name": "s_delete",
+      "value": "删除"
+    },
+    {
+      "name": "s_playlist_actions",
+      "value": "歌单操作"
+    },
+    {
+      "name": "s_delete_playlist",
+      "value": "删除歌单"
+    },
+    {
+      "name": "s_failed_to_add_to_playlist",
+      "value": "加入歌单失败"
+    },
+    {
+      "name": "s_long_press_to_reorder",
+      "value": "长按可排序"
+    },
+    {
+      "name": "fmt_selected_count",
+      "value": "已选 · %d 首"
+    },
+    {
+      "name": "fmt_songs_count",
+      "value": "歌曲 · %d"
+    },
+    {
+      "name": "fmt_albums_count",
+      "value": "专辑 · %d"
+    },
+    {
+      "name": "fmt_playlists_count",
+      "value": "歌单 · %d"
+    },
+    {
+      "name": "fmt_loaded_all_songs",
+      "value": "已加载全部 · %d 首"
+    },
+    {
+      "name": "fmt_loaded_all_albums",
+      "value": "已加载全部 · %d 张专辑"
+    },
+    {
+      "name": "fmt_queue_count",
+      "value": "队列 · %d 首"
+    },
+    {
+      "name": "fmt_comments_count",
+      "value": "评论 · %d 条"
+    },
+    {
+      "name": "fmt_minutes_ago",
+      "value": "%d 分钟前"
+    },
+    {
+      "name": "fmt_hours_ago",
+      "value": "%d 小时前"
+    },
+    {
+      "name": "fmt_days_ago",
+      "value": "%d 天前"
+    },
+    {
+      "name": "fmt_service",
+      "value": "服务 · %s"
+    },
+    {
+      "name": "fmt_guest_mode",
+      "value": "游客模式 · %s"
+    },
+    {
+      "name": "fmt_no_results",
+      "value": "没有找到「%s」"
+    },
+    {
+      "name": "fmt_add_tracks",
+      "value": "添加 %d 首到歌单"
+    },
+    {
+      "name": "fmt_delete_playlist",
+      "value": "删除「%s」？"
+    },
+    {
+      "name": "fmt_added_to_playlist",
+      "value": "已加入「%s」"
+    },
+    {
+      "name": "fmt_album_meta",
+      "value": "%s · %s"
+    },
+    {
+      "name": "fmt_artist_counts",
+      "value": "%d 张专辑 · %d 首歌曲"
+    },
+    {
+      "name": "fmt_restart_required",
+      "value": "需要重启应用"
+    },
+    {
+      "name": "fmt_restart_body",
+      "value": "语言或服务设置已更改。请完全关闭并重新打开应用后生效。"
+    },
+    {
+      "name": "fmt_got_it",
+      "value": "知道了"
+    },
+    {
+      "name": "fmt_language",
+      "value": "语言"
+    },
+    {
+      "name": "fmt_language_system",
+      "value": "跟随系统"
+    },
+    {
+      "name": "fmt_language_zh",
+      "value": "中文"
+    },
+    {
+      "name": "fmt_language_en",
+      "value": "English"
+    },
+    {
+      "name": "fmt_language_system_desc",
+      "value": "随系统语言自动切换"
+    },
+    {
+      "name": "fmt_language_zh_desc",
+      "value": "始终使用中文"
+    },
+    {
+      "name": "fmt_language_en_desc",
+      "value": "始终使用英文"
+    },
+    {
+      "name": "s_follow_system",
+      "value": "跟随系统"
+    },
+    {
+      "name": "s_light",
+      "value": "浅色"
+    },
+    {
+      "name": "s_dark",
+      "value": "深色"
+    },
+    {
+      "name": "s_follow_system_dark",
+      "value": "随手机的深色模式自动切换"
+    },
+    {
+      "name": "s_always_light",
+      "value": "始终使用亮色界面"
+    },
+    {
+      "name": "s_always_dark",
+      "value": "始终使用暗色界面"
+    },
+    {
+      "name": "s_play_in_order",
+      "value": "顺序播放"
+    },
+    {
+      "name": "s_repeat_all",
+      "value": "列表循环"
+    },
+    {
+      "name": "s_repeat_one",
+      "value": "单曲循环"
+    },
+    {
+      "name": "s_shuffle",
+      "value": "随机播放"
+    },
+    {
+      "name": "s_chinese",
+      "value": "中文"
+    },
+    {
+      "name": "s_english",
+      "value": "English"
+    },
+    {
+      "name": "s_system_language",
+      "value": "随系统语言自动切换"
+    },
+    {
+      "name": "s_always_chinese",
+      "value": "始终使用中文"
+    },
+    {
+      "name": "s_always_english",
+      "value": "始终使用英文"
+    },
+    {
+      "name": "s_language",
+      "value": "语言"
+    },
+    {
+      "name": "s_single",
+      "value": "单曲"
+    },
+    {
+      "name": "s_soundtrack",
+      "value": "原声"
+    },
+    {
+      "name": "s_compilation",
+      "value": "合辑"
+    },
+    {
+      "name": "s_mini_album",
+      "value": "迷你专辑"
+    },
+    {
+      "name": "s_listener",
+      "value": "听众"
+    },
+    {
+      "name": "s_network_error",
+      "value": "网络错误"
+    },
+    {
+      "name": "s_request_failed",
+      "value": "请求失败"
+    },
+    {
+      "name": "s_session_expired",
+      "value": "登录已过期，请重新登录"
+    },
+    {
+      "name": "s_no_access_token",
+      "value": "服务器未返回登录令牌"
+    },
+    {
+      "name": "s_no_register_token",
+      "value": "服务器未返回注册令牌"
+    },
+    {
+      "name": "s_non_json",
+      "value": "服务器返回了非 JSON 响应"
+    },
+    {
+      "name": "s_non_subsonic",
+      "value": "服务器返回了非 Subsonic 响应"
+    },
+    {
+      "name": "s_please_sign_in",
+      "value": "请先登录"
+    },
+    {
+      "name": "s_enter_server",
+      "value": "请填写服务器地址"
+    },
+    {
+      "name": "s_not_subsonic",
+      "value": "当前不是 Navidrome/Subsonic 服务"
+    },
+    {
+      "name": "s_no_register",
+      "value": "该服务不支持注册"
+    },
+    {
+      "name": "s_no_comments",
+      "value": "该服务不支持评论"
+    },
+    {
+      "name": "s_no_playlist_sort",
+      "value": "该服务不支持歌单排序"
+    },
+    {
+      "name": "s_no_track_sort",
+      "value": "该服务不支持歌单内排序"
+    },
+    {
+      "name": "s_album_missing",
+      "value": "专辑不存在"
+    },
+    {
+      "name": "s_playlist_missing",
+      "value": "歌单不存在"
+    },
+    {
+      "name": "s_artist_missing",
+      "value": "艺人不存在"
+    },
+    {
+      "name": "s_media_expired",
+      "value": "媒体 ID 已失效，请刷新列表"
+    },
+    {
+      "name": "s_subsonic_failed",
+      "value": "Subsonic 请求失败"
+    },
+    {
+      "name": "s_player_error",
+      "value": "播放器进入错误状态"
+    },
+    {
+      "name": "s_open_source_projects",
+      "value": "开源项目"
+    },
+    {
+      "name": "s_jianyin_client",
+      "value": "简音客户端"
+    },
+    {
+      "name": "s_guobeng_backend",
+      "value": "GuoBeng 后端"
+    }
+  ]
+}

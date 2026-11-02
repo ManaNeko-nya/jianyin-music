@@ -1,0 +1,44 @@
+# Build outputs
+/node_modules
+/oh_modules
+/.hvigor
+**/build
+.cxx
+/.clangd
+/.clang-format
+/.clang-tidy
+**/.test
+/.appanalyzer
+
+# Local IDE / machine settings
+/.idea
+/.projectInfo
+/local.properties
+*.log
+hs_err_pid*.log
+replay_pid*.log
+
+# Signing material and local signing configuration — never commit
+/build-profile.json5
+/.ohos
+*.p12
+*.cer
+*.p7b
+*.jks
+*.keystore
+/.arkui-x/android/keystore.properties
+/.arkui-x/android/local.properties
+
+# ArkUI-X build outputs
+/.arkui-x/android/.gradle
+/.arkui-x/android/build
+/.arkui-x/android/app/build
+/.arkui-x/android/app/libs
+/.arkui-x/android/app/src/main/assets/arkui-x
+/.arkui-x/android/buildArkTS
+/.arkui-x/android/buildArkTS.bat
+/.arkui-x/ios
+
+# Local AI documentation and test artifacts
+/ai_docs
+/vibe_images

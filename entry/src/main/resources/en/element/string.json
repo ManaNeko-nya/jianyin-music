@@ -1,0 +1,908 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "JianYin main module"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "JianYin - music client"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "JianYin"
+    },
+    {
+      "name": "s_unknown_artist",
+      "value": "Unknown artist"
+    },
+    {
+      "name": "s_failed_to_load",
+      "value": "Failed to load"
+    },
+    {
+      "name": "s_album",
+      "value": "Album"
+    },
+    {
+      "name": "s_select_all",
+      "value": "Select all"
+    },
+    {
+      "name": "s_play_all",
+      "value": "Play all"
+    },
+    {
+      "name": "s_playlist",
+      "value": "Playlist"
+    },
+    {
+      "name": "s_added_to_queue",
+      "value": "Added to queue"
+    },
+    {
+      "name": "s_more",
+      "value": "More"
+    },
+    {
+      "name": "s_library",
+      "value": "Library"
+    },
+    {
+      "name": "s_profile",
+      "value": "Profile"
+    },
+    {
+      "name": "s_deselect_all",
+      "value": "Deselect all"
+    },
+    {
+      "name": "s_songs",
+      "value": "Songs"
+    },
+    {
+      "name": "s_unknown_album",
+      "value": "Unknown album"
+    },
+    {
+      "name": "s_sign_in",
+      "value": "Sign in"
+    },
+    {
+      "name": "s_retry",
+      "value": "Retry"
+    },
+    {
+      "name": "s_next",
+      "value": "Next"
+    },
+    {
+      "name": "s_home",
+      "value": "Home"
+    },
+    {
+      "name": "s_failed_to_load_songs",
+      "value": "Failed to load songs"
+    },
+    {
+      "name": "s_playlist_name_cannot_be_empty",
+      "value": "Playlist name cannot be empty"
+    },
+    {
+      "name": "s_failed_to_load_lyrics",
+      "value": "Failed to load lyrics"
+    },
+    {
+      "name": "s_done",
+      "value": "Done"
+    },
+    {
+      "name": "s_tracks",
+      "value": "Tracks"
+    },
+    {
+      "name": "s_search",
+      "value": "Search"
+    },
+    {
+      "name": "s_queue",
+      "value": "Queue"
+    },
+    {
+      "name": "s_comments",
+      "value": "Comments"
+    },
+    {
+      "name": "s_duration",
+      "value": "Duration"
+    },
+    {
+      "name": "s_add_to_playlist",
+      "value": "Add to playlist"
+    },
+    {
+      "name": "s_rename_playlist",
+      "value": "Rename playlist"
+    },
+    {
+      "name": "s_new_playlist",
+      "value": "New playlist"
+    },
+    {
+      "name": "s_appearance",
+      "value": "Appearance"
+    },
+    {
+      "name": "s_try_another_keyword",
+      "value": "Try another keyword"
+    },
+    {
+      "name": "s_add_to_queue",
+      "value": "Add to queue"
+    },
+    {
+      "name": "s_add_to_another_playlist",
+      "value": "Add to another playlist"
+    },
+    {
+      "name": "s_cancel",
+      "value": "Cancel"
+    },
+    {
+      "name": "s_close",
+      "value": "Close"
+    },
+    {
+      "name": "s_sign_in_to_view_your_playlists",
+      "value": "Sign in to view\nyour playlists"
+    },
+    {
+      "name": "s_sign_in_to_sync_favorites_and_playlist_order",
+      "value": "Sign in to sync favorites and playlist order."
+    },
+    {
+      "name": "s_sign_in_2",
+      "value": "Sign in"
+    },
+    {
+      "name": "s_pause",
+      "value": "Pause"
+    },
+    {
+      "name": "s_play",
+      "value": "Play"
+    },
+    {
+      "name": "s_failed_to_create_playlist",
+      "value": "Failed to create playlist"
+    },
+    {
+      "name": "s_failed_to_save_playlist_order",
+      "value": "Failed to save playlist order"
+    },
+    {
+      "name": "s_rename_failed",
+      "value": "Rename failed"
+    },
+    {
+      "name": "s_failed_to_delete_playlist",
+      "value": "Failed to delete playlist"
+    },
+    {
+      "name": "s_failed_to_save_track_order",
+      "value": "Failed to save track order"
+    },
+    {
+      "name": "s_search_failed",
+      "value": "Search failed"
+    },
+    {
+      "name": "s_sign_in_failed",
+      "value": "Sign in failed"
+    },
+    {
+      "name": "s_failed_to_connect_in_guest_mode",
+      "value": "Failed to connect in guest mode"
+    },
+    {
+      "name": "s_registration_failed",
+      "value": "Registration failed"
+    },
+    {
+      "name": "s_failed_to_load_comments",
+      "value": "Failed to load comments"
+    },
+    {
+      "name": "s_sign_in_to_comment",
+      "value": "Sign in to comment"
+    },
+    {
+      "name": "s_comment_posted",
+      "value": "Comment posted"
+    },
+    {
+      "name": "s_failed_to_send_comment",
+      "value": "Failed to send comment"
+    },
+    {
+      "name": "s_search_songs_albums",
+      "value": "Search songs, albums"
+    },
+    {
+      "name": "s_no_songs",
+      "value": "No songs"
+    },
+    {
+      "name": "s_this_album_has_no_songs",
+      "value": "This album has no songs"
+    },
+    {
+      "name": "s_upload_audio_in_the_admin_panel_to_play",
+      "value": "Upload audio in the admin panel to play"
+    },
+    {
+      "name": "s_unknown_year",
+      "value": "Unknown year"
+    },
+    {
+      "name": "s_no_genre",
+      "value": "No genre"
+    },
+    {
+      "name": "s_artist",
+      "value": "Artist"
+    },
+    {
+      "name": "s_no_public_albums_yet",
+      "value": "No public albums yet"
+    },
+    {
+      "name": "s_albums_by_this_artist_will_appear_here",
+      "value": "Albums by this artist will appear here"
+    },
+    {
+      "name": "s_no_tracks_yet",
+      "value": "No tracks yet"
+    },
+    {
+      "name": "s_collaborations_by_this_artist_will_appear_here",
+      "value": "Collaborations by this artist will appear here"
+    },
+    {
+      "name": "s_for_you",
+      "value": "For you"
+    },
+    {
+      "name": "s_all_albums",
+      "value": "All albums"
+    },
+    {
+      "name": "s_recently_added",
+      "value": "Recently added"
+    },
+    {
+      "name": "s_popular_albums",
+      "value": "Popular albums"
+    },
+    {
+      "name": "s_select_songs",
+      "value": "Select songs"
+    },
+    {
+      "name": "s_no_songs_in_the_library",
+      "value": "No songs in the library"
+    },
+    {
+      "name": "s_they_will_appear_after_the_admin_adds_them",
+      "value": "They will appear after the admin adds them"
+    },
+    {
+      "name": "s_no_albums_in_the_library",
+      "value": "No albums in the library"
+    },
+    {
+      "name": "s_they_will_appear_after_the_admin_adds_them_2",
+      "value": "They will appear after the admin adds them"
+    },
+    {
+      "name": "s_playback_speed",
+      "value": "Playback speed"
+    },
+    {
+      "name": "s_collapse",
+      "value": "Collapse"
+    },
+    {
+      "name": "s_swipe_left_or_right_for_lyrics",
+      "value": "Swipe left or right for lyrics"
+    },
+    {
+      "name": "s_no_lyrics",
+      "value": "No lyrics"
+    },
+    {
+      "name": "s_this_track_has_no_lrc_lyrics",
+      "value": "This track has no LRC lyrics"
+    },
+    {
+      "name": "s_previous",
+      "value": "Previous"
+    },
+    {
+      "name": "s_lyrics",
+      "value": "Lyrics"
+    },
+    {
+      "name": "s_queue_2",
+      "value": "Queue"
+    },
+    {
+      "name": "s_no_comments_yet",
+      "value": "No comments yet"
+    },
+    {
+      "name": "s_share_your_thoughts",
+      "value": "Share your thoughts"
+    },
+    {
+      "name": "s_loading",
+      "value": "Loading…"
+    },
+    {
+      "name": "s_view_more_comments",
+      "value": "View more comments"
+    },
+    {
+      "name": "s_sign_in_to_comment_2",
+      "value": "Sign in to comment"
+    },
+    {
+      "name": "s_say_something",
+      "value": "Say something…"
+    },
+    {
+      "name": "s_listen",
+      "value": "Listen"
+    },
+    {
+      "name": "s_view_album",
+      "value": "View album"
+    },
+    {
+      "name": "s_choose_a_playlist",
+      "value": "Choose a playlist"
+    },
+    {
+      "name": "s_just_now",
+      "value": "Just now"
+    },
+    {
+      "name": "s_failed_to_remove_from_playlist",
+      "value": "Failed to remove from playlist"
+    },
+    {
+      "name": "s_this_playlist_has_no_songs",
+      "value": "This playlist has no songs"
+    },
+    {
+      "name": "s_long_press_a_song_in_the_library_to_add_it",
+      "value": "Long-press a song in the library to add it"
+    },
+    {
+      "name": "s_save",
+      "value": "Save"
+    },
+    {
+      "name": "s_tap_songs_to_select",
+      "value": "Tap songs to select"
+    },
+    {
+      "name": "s_long_press_a_song_to_reorder",
+      "value": "Long-press a song to reorder"
+    },
+    {
+      "name": "s_no_playlists_yet",
+      "value": "No playlists yet"
+    },
+    {
+      "name": "s_tap_in_the_top_right_to_create_your_first_playli",
+      "value": "Tap + in the top right to create your first playlist"
+    },
+    {
+      "name": "s_create",
+      "value": "Create"
+    },
+    {
+      "name": "s_sign_in_to_sync_playlists_and_favorites",
+      "value": "Sign in to sync playlists and favorites"
+    },
+    {
+      "name": "s_settings",
+      "value": "Settings"
+    },
+    {
+      "name": "s_about_jianyin",
+      "value": "About JianYin"
+    },
+    {
+      "name": "s_version_server_and_client_information",
+      "value": "Version, server, and client information"
+    },
+    {
+      "name": "s_create_account",
+      "value": "Create account"
+    },
+    {
+      "name": "s_register_to_sync_playlists_and_favorites",
+      "value": "Register to sync playlists and favorites."
+    },
+    {
+      "name": "s_server_account_and_tokens_are_stored_on_this_dev",
+      "value": "Server, account, and tokens are stored on this device and can be changed anytime."
+    },
+    {
+      "name": "s_service_type",
+      "value": "Service type"
+    },
+    {
+      "name": "s_quick_fill",
+      "value": "Quick fill"
+    },
+    {
+      "name": "s_login_record_deleted",
+      "value": "Login record deleted"
+    },
+    {
+      "name": "s_server_address",
+      "value": "Server address"
+    },
+    {
+      "name": "s_username",
+      "value": "Username"
+    },
+    {
+      "name": "s_account",
+      "value": "Account"
+    },
+    {
+      "name": "s_choose_a_username",
+      "value": "Choose a username"
+    },
+    {
+      "name": "s_your_account",
+      "value": "Your account"
+    },
+    {
+      "name": "s_nickname",
+      "value": "Nickname"
+    },
+    {
+      "name": "s_optional",
+      "value": "Optional"
+    },
+    {
+      "name": "s_password",
+      "value": "Password"
+    },
+    {
+      "name": "s_enter_password",
+      "value": "Enter password"
+    },
+    {
+      "name": "s_register_and_sign_in",
+      "value": "Register and sign in"
+    },
+    {
+      "name": "s_sign_in_3",
+      "value": "Sign in"
+    },
+    {
+      "name": "s_browse_only_guest_mode",
+      "value": "Browse only (guest mode)"
+    },
+    {
+      "name": "s_already_have_an_account_sign_in",
+      "value": "Already have an account? Sign in"
+    },
+    {
+      "name": "s_no_account_create_one",
+      "value": "No account? Create one"
+    },
+    {
+      "name": "s_super_admin",
+      "value": "Super admin"
+    },
+    {
+      "name": "s_admin",
+      "value": "Admin"
+    },
+    {
+      "name": "s_user",
+      "value": "User"
+    },
+    {
+      "name": "s_sign_out",
+      "value": "Sign out"
+    },
+    {
+      "name": "s_search_your_library",
+      "value": "Search your library"
+    },
+    {
+      "name": "s_enter_a_song_album_or_artist",
+      "value": "Enter a song, album, or artist"
+    },
+    {
+      "name": "s_no_songs_found",
+      "value": "No songs found"
+    },
+    {
+      "name": "s_open_github",
+      "value": "Open GitHub"
+    },
+    {
+      "name": "s_jianyin",
+      "value": "JianYin"
+    },
+    {
+      "name": "s_version_1_0_0",
+      "value": "Version 1.0.0"
+    },
+    {
+      "name": "s_a_music_frontend_that_feels_closer_to_a_mainstre",
+      "value": "A music frontend that feels closer to a mainstream streaming service"
+    },
+    {
+      "name": "s_our_philosophy_is_to_make_the_experience_feel_cl",
+      "value": "Our philosophy is to make the experience feel closer to a mainstream music streaming platform, not just a local music player. Covers, recommendations, albums, and artists are right there when you open the app; playback, queue, lyrics, search, and playlists sit where you expect them. The interface stays restrained, the motion is smooth, and the hierarchy is clear. Your music stays on your own server: no cloud account, no single-backend lock-in. GuoBeng and Navidrome/Subsonic are both supported, and guest mode lets you browse servers that do not allow sign-in."
+    },
+    {
+      "name": "s_open_source_backends",
+      "value": "Open-source backends"
+    },
+    {
+      "name": "s_about",
+      "value": "About"
+    },
+    {
+      "name": "s_remove_from_playlist",
+      "value": "Remove from playlist"
+    },
+    {
+      "name": "s_failed_to_load_playlists",
+      "value": "Failed to load playlists"
+    },
+    {
+      "name": "s_no_other_playlists_create_one_on_the_playlists_p",
+      "value": "No other playlists. Create one on the Playlists page first."
+    },
+    {
+      "name": "s_remove_from_this_playlist",
+      "value": "Remove from this playlist"
+    },
+    {
+      "name": "s_playlist_name",
+      "value": "Playlist name"
+    },
+    {
+      "name": "s_name_your_playlist",
+      "value": "Name your playlist"
+    },
+    {
+      "name": "s_the_playlist_will_be_deleted_the_songs_stay_in_y",
+      "value": "The playlist will be deleted; the songs stay in your library."
+    },
+    {
+      "name": "s_delete",
+      "value": "Delete"
+    },
+    {
+      "name": "s_playlist_actions",
+      "value": "Playlist actions"
+    },
+    {
+      "name": "s_delete_playlist",
+      "value": "Delete playlist"
+    },
+    {
+      "name": "s_failed_to_add_to_playlist",
+      "value": "Failed to add to playlist"
+    },
+    {
+      "name": "s_long_press_to_reorder",
+      "value": "Long-press to reorder"
+    },
+    {
+      "name": "fmt_selected_count",
+      "value": "Selected · %d"
+    },
+    {
+      "name": "fmt_songs_count",
+      "value": "Songs · %d"
+    },
+    {
+      "name": "fmt_albums_count",
+      "value": "Albums · %d"
+    },
+    {
+      "name": "fmt_playlists_count",
+      "value": "Playlists · %d"
+    },
+    {
+      "name": "fmt_loaded_all_songs",
+      "value": "All loaded · %d songs"
+    },
+    {
+      "name": "fmt_loaded_all_albums",
+      "value": "All loaded · %d albums"
+    },
+    {
+      "name": "fmt_queue_count",
+      "value": "Queue · %d"
+    },
+    {
+      "name": "fmt_comments_count",
+      "value": "Comments · %d"
+    },
+    {
+      "name": "fmt_minutes_ago",
+      "value": "%d min ago"
+    },
+    {
+      "name": "fmt_hours_ago",
+      "value": "%d hr ago"
+    },
+    {
+      "name": "fmt_days_ago",
+      "value": "%d d ago"
+    },
+    {
+      "name": "fmt_service",
+      "value": "Service · %s"
+    },
+    {
+      "name": "fmt_guest_mode",
+      "value": "Guest mode · %s"
+    },
+    {
+      "name": "fmt_no_results",
+      "value": "No results for \"%s\""
+    },
+    {
+      "name": "fmt_add_tracks",
+      "value": "Add %d songs to playlist"
+    },
+    {
+      "name": "fmt_delete_playlist",
+      "value": "Delete \"%s\"?"
+    },
+    {
+      "name": "fmt_added_to_playlist",
+      "value": "Added to \"%s\""
+    },
+    {
+      "name": "fmt_album_meta",
+      "value": "%s · %s"
+    },
+    {
+      "name": "fmt_artist_counts",
+      "value": "%d albums · %d songs"
+    },
+    {
+      "name": "fmt_restart_required",
+      "value": "Restart required"
+    },
+    {
+      "name": "fmt_restart_body",
+      "value": "Language or service settings changed. Fully close and reopen the app for the change to take effect."
+    },
+    {
+      "name": "fmt_got_it",
+      "value": "Got it"
+    },
+    {
+      "name": "fmt_language",
+      "value": "Language"
+    },
+    {
+      "name": "fmt_language_system",
+      "value": "Follow system"
+    },
+    {
+      "name": "fmt_language_zh",
+      "value": "Chinese"
+    },
+    {
+      "name": "fmt_language_en",
+      "value": "English"
+    },
+    {
+      "name": "fmt_language_system_desc",
+      "value": "Use the system language"
+    },
+    {
+      "name": "fmt_language_zh_desc",
+      "value": "Always use Chinese"
+    },
+    {
+      "name": "fmt_language_en_desc",
+      "value": "Always use English"
+    },
+    {
+      "name": "s_follow_system",
+      "value": "Follow system"
+    },
+    {
+      "name": "s_light",
+      "value": "Light"
+    },
+    {
+      "name": "s_dark",
+      "value": "Dark"
+    },
+    {
+      "name": "s_follow_system_dark",
+      "value": "Follow the system dark mode"
+    },
+    {
+      "name": "s_always_light",
+      "value": "Always use the light theme"
+    },
+    {
+      "name": "s_always_dark",
+      "value": "Always use the dark theme"
+    },
+    {
+      "name": "s_play_in_order",
+      "value": "Play in order"
+    },
+    {
+      "name": "s_repeat_all",
+      "value": "Repeat all"
+    },
+    {
+      "name": "s_repeat_one",
+      "value": "Repeat one"
+    },
+    {
+      "name": "s_shuffle",
+      "value": "Shuffle"
+    },
+    {
+      "name": "s_chinese",
+      "value": "Chinese"
+    },
+    {
+      "name": "s_english",
+      "value": "English"
+    },
+    {
+      "name": "s_system_language",
+      "value": "Use the system language"
+    },
+    {
+      "name": "s_always_chinese",
+      "value": "Always use Chinese"
+    },
+    {
+      "name": "s_always_english",
+      "value": "Always use English"
+    },
+    {
+      "name": "s_language",
+      "value": "Language"
+    },
+    {
+      "name": "s_single",
+      "value": "Single"
+    },
+    {
+      "name": "s_soundtrack",
+      "value": "Soundtrack"
+    },
+    {
+      "name": "s_compilation",
+      "value": "Compilation"
+    },
+    {
+      "name": "s_mini_album",
+      "value": "Mini album"
+    },
+    {
+      "name": "s_listener",
+      "value": "Listener"
+    },
+    {
+      "name": "s_network_error",
+      "value": "Network error"
+    },
+    {
+      "name": "s_request_failed",
+      "value": "Request failed"
+    },
+    {
+      "name": "s_session_expired",
+      "value": "Session expired. Please sign in again."
+    },
+    {
+      "name": "s_no_access_token",
+      "value": "Server did not return an access token"
+    },
+    {
+      "name": "s_no_register_token",
+      "value": "Server did not return a registration token"
+    },
+    {
+      "name": "s_non_json",
+      "value": "Server returned a non-JSON response"
+    },
+    {
+      "name": "s_non_subsonic",
+      "value": "Server returned a non-Subsonic response"
+    },
+    {
+      "name": "s_please_sign_in",
+      "value": "Please sign in first"
+    },
+    {
+      "name": "s_enter_server",
+      "value": "Please enter a server address"
+    },
+    {
+      "name": "s_not_subsonic",
+      "value": "This is not a Navidrome/Subsonic service"
+    },
+    {
+      "name": "s_no_register",
+      "value": "This service does not support registration"
+    },
+    {
+      "name": "s_no_comments",
+      "value": "This service does not support comments"
+    },
+    {
+      "name": "s_no_playlist_sort",
+      "value": "This service does not support playlist sorting"
+    },
+    {
+      "name": "s_no_track_sort",
+      "value": "This service does not support track reordering"
+    },
+    {
+      "name": "s_album_missing",
+      "value": "Album not found"
+    },
+    {
+      "name": "s_playlist_missing",
+      "value": "Playlist not found"
+    },
+    {
+      "name": "s_artist_missing",
+      "value": "Artist not found"
+    },
+    {
+      "name": "s_media_expired",
+      "value": "Media ID expired. Refresh the list."
+    },
+    {
+      "name": "s_subsonic_failed",
+      "value": "Subsonic request failed"
+    },
+    {
+      "name": "s_player_error",
+      "value": "Player entered an error state"
+    },
+    {
+      "name": "s_open_source_projects",
+      "value": "Open-source projects"
+    },
+    {
+      "name": "s_jianyin_client",
+      "value": "JianYin client"
+    },
+    {
+      "name": "s_guobeng_backend",
+      "value": "GuoBeng backend"
+    }
+  ]
+}

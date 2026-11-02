@@ -1,0 +1,241 @@
+import { resourceManager } from '@kit.LocalizationKit';
+
+/** 中文源文案 → 资源名。资源文件按系统/应用偏好语言解析，页面只调用 tr/fmt。 */
+export class L10n {
+  private static rm: resourceManager.ResourceManager | null = null;
+  private static readonly keys: Map<string, string> = new Map<string, string>([
+    ['未知艺人', 's_unknown_artist'],
+    ['加载失败', 's_failed_to_load'],
+    ['专辑', 's_album'],
+    ['全选', 's_select_all'],
+    ['播放全部', 's_play_all'],
+    ['歌单', 's_playlist'],
+    ['已加入播放列表', 's_added_to_queue'],
+    ['更多', 's_more'],
+    ['曲库', 's_library'],
+    ['我的', 's_profile'],
+    ['取消全选', 's_deselect_all'],
+    ['歌曲', 's_songs'],
+    ['未知专辑', 's_unknown_album'],
+    ['登录账户', 's_sign_in'],
+    ['重试', 's_retry'],
+    ['下一首', 's_next'],
+    ['首页', 's_home'],
+    ['加载歌曲失败', 's_failed_to_load_songs'],
+    ['歌单名称不能为空', 's_playlist_name_cannot_be_empty'],
+    ['歌词加载失败', 's_failed_to_load_lyrics'],
+    ['完成', 's_done'],
+    ['曲目', 's_tracks'],
+    ['搜索', 's_search'],
+    ['播放列表', 's_queue'],
+    ['评论', 's_comments'],
+    ['时长', 's_duration'],
+    ['添加到歌单', 's_add_to_playlist'],
+    ['重命名歌单', 's_rename_playlist'],
+    ['新建歌单', 's_new_playlist'],
+    ['外观主题', 's_appearance'],
+    ['换一个关键词试试', 's_try_another_keyword'],
+    ['加入播放列表', 's_add_to_queue'],
+    ['添加到其他歌单', 's_add_to_another_playlist'],
+    ['取消', 's_cancel'],
+    ['关闭', 's_close'],
+    ['登录后查看\n你的歌单', 's_sign_in_to_view_your_playlists'],
+    ['登录账号后同步收藏列表与歌单顺序。', 's_sign_in_to_sync_favorites_and_playlist_order'],
+    ['去登录', 's_sign_in_2'],
+    ['暂停', 's_pause'],
+    ['播放', 's_play'],
+    ['创建歌单失败', 's_failed_to_create_playlist'],
+    ['保存歌单顺序失败', 's_failed_to_save_playlist_order'],
+    ['重命名失败', 's_rename_failed'],
+    ['删除歌单失败', 's_failed_to_delete_playlist'],
+    ['保存歌曲顺序失败', 's_failed_to_save_track_order'],
+    ['搜索失败', 's_search_failed'],
+    ['登录失败', 's_sign_in_failed'],
+    ['游客模式连接失败', 's_failed_to_connect_in_guest_mode'],
+    ['注册失败', 's_registration_failed'],
+    ['评论加载失败', 's_failed_to_load_comments'],
+    ['登录后才能发表评论', 's_sign_in_to_comment'],
+    ['评论已发布', 's_comment_posted'],
+    ['评论发送失败', 's_failed_to_send_comment'],
+    ['搜索歌曲、专辑', 's_search_songs_albums'],
+    ['暂无歌曲', 's_no_songs'],
+    ['专辑还没有歌曲', 's_this_album_has_no_songs'],
+    ['在管理端上传音频后即可播放', 's_upload_audio_in_the_admin_panel_to_play'],
+    ['未知年份', 's_unknown_year'],
+    ['未标记曲风', 's_no_genre'],
+    ['艺人', 's_artist'],
+    ['还没有公开专辑', 's_no_public_albums_yet'],
+    ['该艺人名下的专辑会出现在这里', 's_albums_by_this_artist_will_appear_here'],
+    ['暂无参与歌曲', 's_no_tracks_yet'],
+    ['该艺人参与的合作曲也会出现在这里', 's_collaborations_by_this_artist_will_appear_here'],
+    ['为你推荐', 's_for_you'],
+    ['全部专辑', 's_all_albums'],
+    ['最近上架', 's_recently_added'],
+    ['热门专辑', 's_popular_albums'],
+    ['选择歌曲', 's_select_songs'],
+    ['曲库还没有歌曲', 's_no_songs_in_the_library'],
+    ['等待管理员上架后会自动出现在这里', 's_they_will_appear_after_the_admin_adds_them'],
+    ['曲库还没有专辑', 's_no_albums_in_the_library'],
+    ['管理员上架专辑后会出现在这里', 's_they_will_appear_after_the_admin_adds_them_2'],
+    ['播放速度', 's_playback_speed'],
+    ['收起', 's_collapse'],
+    ['左右滑动查看歌词', 's_swipe_left_or_right_for_lyrics'],
+    ['暂无歌词', 's_no_lyrics'],
+    ['这首歌还没有上传 LRC 歌词', 's_this_track_has_no_lrc_lyrics'],
+    ['上一首', 's_previous'],
+    ['歌词', 's_lyrics'],
+    ['列表', 's_queue_2'],
+    ['还没有评论', 's_no_comments_yet'],
+    ['说说你听完这首歌的感受', 's_share_your_thoughts'],
+    ['加载中…', 's_loading'],
+    ['查看更多评论', 's_view_more_comments'],
+    ['登录后可以发表评论', 's_sign_in_to_comment_2'],
+    ['说点什么…', 's_say_something'],
+    ['听', 's_listen'],
+    ['查看专辑', 's_view_album'],
+    ['选择目标歌单', 's_choose_a_playlist'],
+    ['刚刚', 's_just_now'],
+    ['移出歌单失败', 's_failed_to_remove_from_playlist'],
+    ['这个歌单还没有歌曲', 's_this_playlist_has_no_songs'],
+    ['在曲库中长按歌曲即可加入歌单', 's_long_press_a_song_in_the_library_to_add_it'],
+    ['保存', 's_save'],
+    ['点击歌曲进行选择', 's_tap_songs_to_select'],
+    ['长按歌曲可拖动排序', 's_long_press_a_song_to_reorder'],
+    ['还没有歌单', 's_no_playlists_yet'],
+    ['点击右上角加号创建你的第一个歌单', 's_tap_in_the_top_right_to_create_your_first_playli'],
+    ['创建', 's_create'],
+    ['登录后同步歌单与收藏', 's_sign_in_to_sync_playlists_and_favorites'],
+    ['设置', 's_settings'],
+    ['关于简音', 's_about_jianyin'],
+    ['版本、服务器与客户端信息', 's_version_server_and_client_information'],
+    ['创建账户', 's_create_account'],
+    ['注册后即可同步歌单与收藏。', 's_register_to_sync_playlists_and_favorites'],
+    ['服务器、账号与登录令牌都保存在本机，可随时切换。', 's_server_account_and_tokens_are_stored_on_this_dev'],
+    ['服务类型', 's_service_type'],
+    ['快捷填充', 's_quick_fill'],
+    ['已删除该登录记录', 's_login_record_deleted'],
+    ['服务器地址', 's_server_address'],
+    ['用户名', 's_username'],
+    ['账号', 's_account'],
+    ['设置一个用户名', 's_choose_a_username'],
+    ['你的账号', 's_your_account'],
+    ['昵称', 's_nickname'],
+    ['可留空', 's_optional'],
+    ['密码', 's_password'],
+    ['输入密码', 's_enter_password'],
+    ['注册并登录', 's_register_and_sign_in'],
+    ['登录', 's_sign_in_3'],
+    ['仅浏览（游客模式）', 's_browse_only_guest_mode'],
+    ['已有账号？返回登录', 's_already_have_an_account_sign_in'],
+    ['没有账号？创建一个', 's_no_account_create_one'],
+    ['超级管理员', 's_super_admin'],
+    ['管理员', 's_admin'],
+    ['普通用户', 's_user'],
+    ['退出登录', 's_sign_out'],
+    ['搜索你的音乐库', 's_search_your_library'],
+    ['输入歌名、专辑名或艺人名', 's_enter_a_song_album_or_artist'],
+    ['没有找到歌曲', 's_no_songs_found'],
+    ['打开 GitHub', 's_open_github'],
+    ['简音', 's_jianyin'],
+    ['版本 1.0.0', 's_version_1_0_0'],
+    ['使用体验更像常规流媒体的音乐前端APP', 's_a_music_frontend_that_feels_closer_to_a_mainstre'],
+    ['简音希望把自托管音乐库的使用体验做得像日常流媒体一样顺手：打开就能看到封面、推荐、专辑和艺人，播放、队列、歌词、搜索、歌单都在熟悉的位置。界面克制、动画流畅、信息层级清楚；音乐数据留在自己的服务器上，不绑定云账号，也不锁定单一后端。GuoBeng 与 Navidrome/Subsonic 都可以接入，未开放登录的服务器也可以用游客模式直接浏览。', 's_our_philosophy_is_to_make_the_experience_feel_cl'],
+    ['开源后端', 's_open_source_backends'],
+    ['关于', 's_about'],
+    ['移出歌单', 's_remove_from_playlist'],
+    ['加载歌单失败', 's_failed_to_load_playlists'],
+    ['没有其他歌单，请先在歌单页创建。', 's_no_other_playlists_create_one_on_the_playlists_p'],
+    ['从该歌单移出', 's_remove_from_this_playlist'],
+    ['歌单名称', 's_playlist_name'],
+    ['给歌单起个名字', 's_name_your_playlist'],
+    ['歌单会被删除，歌曲本身不会从音乐库移除。', 's_the_playlist_will_be_deleted_the_songs_stay_in_y'],
+    ['删除', 's_delete'],
+    ['歌单操作', 's_playlist_actions'],
+    ['删除歌单', 's_delete_playlist'],
+    ['加入歌单失败', 's_failed_to_add_to_playlist'],
+    ['长按可排序', 's_long_press_to_reorder'],
+    ['跟随系统', 's_follow_system'],
+    ['浅色', 's_light'],
+    ['深色', 's_dark'],
+    ['随手机的深色模式自动切换', 's_follow_system_dark'],
+    ['始终使用亮色界面', 's_always_light'],
+    ['始终使用暗色界面', 's_always_dark'],
+    ['顺序播放', 's_play_in_order'],
+    ['列表循环', 's_repeat_all'],
+    ['单曲循环', 's_repeat_one'],
+    ['随机播放', 's_shuffle'],
+    ['中文', 's_chinese'],
+    ['English', 's_english'],
+    ['随系统语言自动切换', 's_system_language'],
+    ['始终使用中文', 's_always_chinese'],
+    ['始终使用英文', 's_always_english'],
+    ['语言', 's_language'],
+    ['单曲', 's_single'],
+    ['原声', 's_soundtrack'],
+    ['合辑', 's_compilation'],
+    ['迷你专辑', 's_mini_album'],
+    ['听众', 's_listener'],
+    ['网络错误', 's_network_error'],
+    ['请求失败', 's_request_failed'],
+    ['登录已过期，请重新登录', 's_session_expired'],
+    ['服务器未返回登录令牌', 's_no_access_token'],
+    ['服务器未返回注册令牌', 's_no_register_token'],
+    ['服务器返回了非 JSON 响应', 's_non_json'],
+    ['服务器返回了非 Subsonic 响应', 's_non_subsonic'],
+    ['请先登录', 's_please_sign_in'],
+    ['请填写服务器地址', 's_enter_server'],
+    ['当前不是 Navidrome/Subsonic 服务', 's_not_subsonic'],
+    ['该服务不支持注册', 's_no_register'],
+    ['该服务不支持评论', 's_no_comments'],
+    ['该服务不支持歌单排序', 's_no_playlist_sort'],
+    ['该服务不支持歌单内排序', 's_no_track_sort'],
+    ['专辑不存在', 's_album_missing'],
+    ['歌单不存在', 's_playlist_missing'],
+    ['艺人不存在', 's_artist_missing'],
+    ['媒体 ID 已失效，请刷新列表', 's_media_expired'],
+    ['Subsonic 请求失败', 's_subsonic_failed'],
+    ['播放器进入错误状态', 's_player_error'],
+    ['开源项目', 's_open_source_projects'],
+    ['简音客户端', 's_jianyin_client'],
+    ['GuoBeng 后端', 's_guobeng_backend'],
+  ]);
+
+  static init(rm: resourceManager.ResourceManager): void {
+    L10n.rm = rm;
+  }
+
+  static tr(text: string): string {
+    if (text.length === 0 || L10n.rm === null) {
+      return text;
+    }
+    const key = L10n.keys.get(text);
+    if (key === undefined) {
+      return text;
+    }
+    try {
+      return L10n.rm.getStringByNameSync(key);
+    } catch (err) {
+      return text;
+    }
+  }
+
+  static fmt(key: string, args: Array<string | number>): string {
+    if (L10n.rm === null) {
+      return key;
+    }
+    try {
+      if (args.length === 0) {
+        return L10n.rm.getStringByNameSync(key);
+      }
+      if (args.length === 1) {
+        return L10n.rm.getStringByNameSync(key, args[0]);
+      }
+      if (args.length === 2) {
+        return L10n.rm.getStringByNameSync(key, args[0], args[1]);
+      }
+      return L10n.rm.getStringByNameSync(key, args[0], args[1], args[2]);
+    } catch (err) {
+      return key;
+    }
+  }
+}
