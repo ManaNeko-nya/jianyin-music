@@ -28,7 +28,7 @@
 - **GuoBeng**：本项目配套的自有后端（原 MusicServer），[GitHub 仓库](https://github.com/ManaNeko-nya/guobeng-music-backend)。
 - **Navidrome / Subsonic**：支持标准 Subsonic API 的自托管音乐服务，[Navidrome](https://github.com/navidrome/navidrome)。
 - **游客模式**：未开放登录的服务也可以直接浏览；评论、歌单、添加到歌单等依赖账号的功能会自动隐藏。
-- 中英双语：设置中可跟随系统，或手动选择中文 / English；语言或服务器切换后需要重启 App。
+- 中英双语：设置中可跟随系统，或手动选择中文 / English；语言切换后需要重启 App。
 
 ## 主要功能
 
@@ -81,7 +81,7 @@ UI (ArkUI V2 / ArkUI-X)
 ### 本地化
 
 - 默认跟随系统语言；设置中可手动选择中文或 English。
-- 语言和服务器切换都需要重启 App 后生效，避免半刷新状态。
+- 语言切换需要重启 App 后生效；切换服务器或重新登录会直接重新加载四个页签的内容。
 - 静态文案在 `resources/base` 与 `resources/en`，动态计数通过 `L10n.fmt()` 使用资源格式化。
 - 服务端返回的错误原文保留；客户端网络/状态错误有中英资源。
 

@@ -273,7 +273,8 @@ export struct SongListPage {
         .onClick(() => {
           const idx = this.currentIndex();
           if (idx >= 0) {
-            this.scroller.scrollToIndex(this.leadingItemCount + idx, true);
+            // 居中对齐：定位后当前歌曲在视口正中，而不是贴顶或贴底。
+            this.scroller.scrollToIndex(this.leadingItemCount + idx, true, ScrollAlign.CENTER);
           }
         })
       }

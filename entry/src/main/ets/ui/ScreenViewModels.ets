@@ -1,4 +1,4 @@
-import { Session, User } from '../data/Session';
+import { Session } from '../data/Session';
 import { MusicRepository } from '../data/MusicRepository';
 import {
   Album, Track, Playlist, AlbumDetail, PlaylistDetail, HomeData, PageData, SearchResults,
@@ -467,16 +467,20 @@ export class AuthFormState {
 export class ProfileViewModel {
   @Trace state: AuthFormState = new AuthFormState();
 
-  login(providerKind: ProviderKind, baseUrl: string, account: string, password: string): void {
+  async login(providerKind: ProviderKind, baseUrl: string, account: string,
+    password: string): Promise<boolean> {
     this.state.loading = true;
     this.state.error = '';
-    MusicRepository.login(providerKind, baseUrl, account, password).then((_u: User | null): void => {
+    try {
+      await MusicRepository.login(providerKind, baseUrl, account, password);
       this.state = new AuthFormState();
-    }).catch((err: Object): void => {
+      return Session.loggedIn;
+    } catch (err) {
       const state = new AuthFormState();
       state.error = errText(err, '登录失败');
       this.state = state;
-    });
+      return false;
+    }
   }
 
   async guest(providerKind: ProviderKind, baseUrl: string): Promise<boolean> {
@@ -494,16 +498,20 @@ export class ProfileViewModel {
     }
   }
 
-  register(baseUrl: string, username: string, password: string, nickname: string): void {
+  async register(baseUrl: string, username: string, password: string,
+    nickname: string): Promise<boolean> {
     this.state.loading = true;
     this.state.error = '';
-    MusicRepository.register(baseUrl, username, password, nickname).then((_u: User | null): void => {
+    try {
+      await MusicRepository.register(baseUrl, username, password, nickname);
       this.state = new AuthFormState();
-    }).catch((err: Object): void => {
+      return Session.loggedIn;
+    } catch (err) {
       const state = new AuthFormState();
       state.error = errText(err, '注册失败');
       this.state = state;
-    });
+      return false;
+    }
   }
 
   logout(): void {

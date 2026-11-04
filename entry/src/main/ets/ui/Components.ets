@@ -529,16 +529,40 @@ export struct EqualizerBars {
   @Param playing: boolean = true;
   @Param color: string = '#FF000000';
   @Local t: number = 0;
+  private timer: number = -1;
 
   aboutToAppear(): void {
-    this.getUIContext().animateTo({
-      duration: 900,
-      curve: Curve.Linear,
-      iterations: -1,
-      playMode: PlayMode.Normal,
-    }, () => {
-      this.t = 1;
-    });
+    this.startTimer();
+  }
+
+  aboutToDisappear(): void {
+    this.stopTimer();
+  }
+
+  @Monitor('playing')
+  onPlayingChanged(): void {
+    if (this.playing) {
+      this.startTimer();
+    } else {
+      this.stopTimer();
+    }
+  }
+
+  /** 定时推进相位：不依赖无限循环 animateTo（部分平台不执行）。 */
+  private startTimer(): void {
+    if (this.timer >= 0 || !this.playing) {
+      return;
+    }
+    this.timer = setInterval((): void => {
+      this.t = (this.t + 0.07) % 1;
+    }, 60);
+  }
+
+  private stopTimer(): void {
+    if (this.timer >= 0) {
+      clearInterval(this.timer);
+      this.timer = -1;
+    }
   }
 
   private fraction(i: number): number {
@@ -578,50 +602,17 @@ export struct EqualizerBars {
   }
 }
 
+/** 统一的加载指示器。用系统 LoadingProgress 自带动画，避免无限循环 animateTo 在部分平台不跑。 */
 @ComponentV2
 export struct TinySpinner {
   @Param color: string = '#FF000000';
   @Param boxSize: number = 16;
-  @Local rotation: number = 0;
-  private settings: RenderingContextSettings = new RenderingContextSettings(true);
-  private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings);
-
-  aboutToAppear(): void {
-    this.getUIContext().animateTo({
-      duration: 800,
-      curve: Curve.Linear,
-      iterations: -1,
-      playMode: PlayMode.Normal,
-    }, () => {
-      this.rotation = 360;
-    });
-  }
-
-  private draw(): void {
-    const ctx = this.context;
-    const w = this.boxSize;
-    ctx.clearRect(0, 0, w, w);
-    ctx.lineWidth = Math.max(1.5, w * 0.1);
-    ctx.lineCap = 'round';
-    ctx.strokeStyle = this.color;
-    ctx.beginPath();
-    ctx.arc(w / 2, w / 2, w / 2 - ctx.lineWidth, 0, 260 * Math.PI / 180);
-    ctx.stroke();
-  }
 
   build() {
-    Canvas(this.context)
+    LoadingProgress()
       .width(this.boxSize)
       .height(this.boxSize)
-      .rotate({
-        z: 1,
-        angle: this.rotation,
-        centerX: '50%',
-        centerY: '50%',
-      })
-      .onReady(() => {
-        this.draw();
-      })
+      .color(this.color)
   }
 }
 
@@ -761,9 +752,7 @@ export struct UnderlinedField {
 export struct LoadingBox {
   build() {
     Stack({ alignContent: Alignment.Center }) {
-      EqualizerBars({ playing: true, color: Theme.ink.accent })
-        .width(28)
-        .height(22)
+      TinySpinner({ color: Theme.ink.accent, boxSize: 30 })
     }
     .width('100%')
     .height('100%')
@@ -877,7 +866,7 @@ export struct LoadingBars {
   @Param color: string = '';
 
   build() {
-    EqualizerBars({ playing: true, color: this.color.length > 0 ? this.color : Theme.ink.accent })
+    TinySpinner({ color: this.color.length > 0 ? this.color : Theme.ink.accent, boxSize: 24 })
   }
 }
 

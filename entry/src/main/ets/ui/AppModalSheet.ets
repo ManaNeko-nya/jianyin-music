@@ -149,10 +149,20 @@ export struct AppModalSheet {
           radius: { topLeft: 24, topRight: 24 },
           blurStyle: BlurStyle.NONE,
           keyboardAvoidMode: SheetKeyboardAvoidMode.TRANSLATE_AND_RESIZE,
-          shouldDismiss: (dismiss: SheetDismiss): void => {
-            if (this.dismissEnabled && !this.closing) {
-              this.closing = true;
-              dismiss.dismiss();
+          // 必须用 onWillDismiss + onWillSpringBackWhenDismiss：
+          // 只注册 shouldDismiss 时，下拉松手后框架会先弹回打开位置，再播退出动画，
+          // 表现为“从最顶部重新向下滑”。不主动 springBack 就能从松手位置直接滑出。
+          onWillDismiss: (action: DismissSheetAction): void => {
+            if (!this.dismissEnabled || this.closing) {
+              return;
+            }
+            this.closing = true;
+            action.dismiss();
+          },
+          onWillSpringBackWhenDismiss: (action: SpringBackAction): void => {
+            // 只有不允许关闭（提交中）时才回弹到打开位置。
+            if (!this.dismissEnabled) {
+              action.springBack();
             }
           },
           onDisappear: (): void => {

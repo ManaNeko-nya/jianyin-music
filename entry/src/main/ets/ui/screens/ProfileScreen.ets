@@ -224,21 +224,23 @@ export struct LoginScreen {
   @Local password: string = '';
   @Local nickname: string = '';
   @Local bar: TopBarState = new TopBarState();
-  @Local showRestart: boolean = false;
-
-  @Monitor('vm.state')
-  onAuthStateChange(): void {
-    if (Session.user !== null) {
-      this.showRestart = true;
-    }
-  }
 
   private submit(): void {
     AppUI.keyboardHide();
     if (this.registerMode) {
-      this.vm.register(this.server, this.account, this.password, this.nickname);
+      this.vm.register(this.server, this.account, this.password, this.nickname)
+        .then((ok: boolean): void => {
+          if (ok) {
+            this.finishAuth();
+          }
+        });
     } else {
-      this.vm.login(this.provider, this.server, this.account, this.password);
+      this.vm.login(this.provider, this.server, this.account, this.password)
+        .then((ok: boolean): void => {
+          if (ok) {
+            this.finishAuth();
+          }
+        });
     }
   }
 
@@ -247,9 +249,15 @@ export struct LoginScreen {
     this.registerMode = false;
     this.vm.guest(this.provider, this.server).then((ok: boolean): void => {
       if (ok) {
-        this.showRestart = true;
+        this.finishAuth();
       }
     });
+  }
+
+  /** 登录成功直接返回：四个页签监听 Session.dataVersion，会各自重新拉取内容，不需要重启 App。 */
+  private finishAuth(): void {
+    AppUI.keyboardHide();
+    AppNav.pop();
   }
 
   @Builder
@@ -455,12 +463,6 @@ export struct LoginScreen {
       }
       .width('100%')
       .height('100%')
-
-      if (this.showRestart) {
-        RestartNoticeSheet({ onDismiss: (): void => {
-          this.showRestart = false;
-        } })
-      }
 
       SecondaryTitleBar({ title: '登录账户', bar: this.bar })
     }
