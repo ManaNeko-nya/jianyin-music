@@ -1057,7 +1057,6 @@ struct QueueTrackRow {
           color: this.isCurrent ? WHITE : withAlpha(WHITE, 0.9),
           lines: 1,
           weight: this.isCurrent ? 700 : 500,
-          marquee: true,
         })
           .width('100%')
         InkText({
@@ -1066,6 +1065,7 @@ struct QueueTrackRow {
           color: withAlpha(WHITE, 0.48),
           lines: 1,
           marquee: true,
+          marqueeStep: 2,
         })
           .width('100%')
       }

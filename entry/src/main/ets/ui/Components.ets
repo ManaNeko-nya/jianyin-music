@@ -78,6 +78,8 @@ export struct InkText {
   @Param maxFontSize: number = 0;
   /** 超长时横向滚动；调用方需用 .width('100%') 限宽才会触发。 */
   @Param marquee: boolean = false;
+  /** 每步位移（vp），越大越快。 */
+  @Param marqueeStep: number = 4;
 
   build() {
     Text(L10n.tr(this.text))
@@ -90,6 +92,11 @@ export struct InkText {
       .minFontSize(this.maxFontSize > 0 ? this.maxFontSize : this.style.size)
       .textOverflow({ overflow: this.marquee ? TextOverflow.MARQUEE : TextOverflow.Ellipsis })
       .textAlign(this.alignTo)
+      .marqueeOptions({
+        start: this.marquee,
+        step: this.marqueeStep,
+        loop: -1,
+      })
   }
 }
 
@@ -460,7 +467,6 @@ export struct TrackRow {
           color: this.isCurrent ? Theme.ink.accent : Theme.ink.ink,
           lines: 1,
           weight: this.isCurrent ? 700 : 500,
-          marquee: true,
         })
           .width('100%')
         Row().height(2)
@@ -470,6 +476,7 @@ export struct TrackRow {
           color: Theme.ink.inkMuted,
           lines: 1,
           marquee: true,
+          marqueeStep: 2,
         })
           .width('100%')
       }
@@ -483,11 +490,6 @@ export struct TrackRow {
           .height(16)
         Row().width(8).height(1)
       }
-      InkText({
-        text: formatDuration(this.track.durationMs),
-        style: Typo.labelMedium,
-        color: Theme.ink.inkMuted,
-      })
       if (this.hasMore) {
         Row().width(2).height(1)
         RoundIconButton({
