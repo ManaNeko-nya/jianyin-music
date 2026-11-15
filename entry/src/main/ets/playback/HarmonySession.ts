@@ -81,12 +81,16 @@ export class HarmonySession {
       return;
     }
     try {
+      // PlaybackState：2=PLAY，3=PAUSE（0=INITIAL，1=PREPARE）
       this.session.setAVPlaybackState({
-        state: isPlaying ? 1 : 0,
+        state: isPlaying ? 2 : 3,
         position: { elapsedTime: positionMs, updateTime: new Date().getTime() },
         speed: speed,
+      }).catch((err: ESObject): void => {
+        hilog.error(DOMAIN, TAG, `setAVPlaybackState failed: ${JSON.stringify(err)}`);
       });
     } catch (err) {
+      hilog.error(DOMAIN, TAG, `setAVPlaybackState throw: ${JSON.stringify(err)}`);
     }
   }
 

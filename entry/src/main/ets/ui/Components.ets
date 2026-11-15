@@ -76,6 +76,8 @@ export struct InkText {
   @Param weight: number = 0;
   @Param alignTo: TextAlign = TextAlign.Start;
   @Param maxFontSize: number = 0;
+  /** 超长时横向滚动；调用方需用 .width('100%') 限宽才会触发。 */
+  @Param marquee: boolean = false;
 
   build() {
     Text(L10n.tr(this.text))
@@ -86,7 +88,7 @@ export struct InkText {
       .fontColor(this.color)
       .maxLines(this.lines)
       .minFontSize(this.maxFontSize > 0 ? this.maxFontSize : this.style.size)
-      .textOverflow({ overflow: TextOverflow.Ellipsis })
+      .textOverflow({ overflow: this.marquee ? TextOverflow.MARQUEE : TextOverflow.Ellipsis })
       .textAlign(this.alignTo)
   }
 }
@@ -458,14 +460,18 @@ export struct TrackRow {
           color: this.isCurrent ? Theme.ink.accent : Theme.ink.ink,
           lines: 1,
           weight: this.isCurrent ? 700 : 500,
+          marquee: true,
         })
+          .width('100%')
         Row().height(2)
         InkText({
           text: subtitleOf(this.track),
           style: Typo.bodySmall,
           color: Theme.ink.inkMuted,
           lines: 1,
+          marquee: true,
         })
+          .width('100%')
       }
       .alignItems(HorizontalAlign.Start)
       .layoutWeight(1)

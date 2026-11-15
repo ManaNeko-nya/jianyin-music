@@ -1,10 +1,13 @@
 export class LyricLine {
   readonly timeMs: number;
   readonly text: string;
+  /** 译文；没有翻译时为空串。 */
+  readonly translation: string;
 
-  constructor(timeMs: number, text: string) {
+  constructor(timeMs: number, text: string, translation: string = '') {
     this.timeMs = timeMs;
     this.text = text;
+    this.translation = translation;
   }
 }
 
@@ -44,7 +47,17 @@ export function parseLrc(raw: string): LyricLine[] {
     }
   }
   result.sort((a: LyricLine, b: LyricLine): number => a.timeMs - b.timeMs);
-  return result;
+  // 后端 KRC 导入约定：译文紧跟原文、共用同一时间戳，按同一行合并。
+  const merged: LyricLine[] = [];
+  for (const line of result) {
+    const prev: LyricLine | null = merged.length > 0 ? merged[merged.length - 1] : null;
+    if (prev !== null && prev.timeMs === line.timeMs && prev.translation.length === 0) {
+      merged[merged.length - 1] = new LyricLine(prev.timeMs, prev.text, line.text);
+      continue;
+    }
+    merged.push(line);
+  }
+  return merged;
 }
 
 function toLong(raw: string): number {

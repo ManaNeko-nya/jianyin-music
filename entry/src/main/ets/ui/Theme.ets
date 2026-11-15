@@ -138,6 +138,8 @@ export class Typo {
   static readonly bodyLarge = new TypoStyle(16, 400, 24, 0);
   static readonly bodyMedium = new TypoStyle(14, 400, 21, 0);
   static readonly bodySmall = new TypoStyle(12, 400, 17, 0);
+  /** 比 bodyMedium 小一号，用于歌词译文等辅助正文。 */
+  static readonly bodyCompact = new TypoStyle(13, 400, 20, 0);
   static readonly labelLarge = new TypoStyle(13, 500, 18, 0.3);
   static readonly labelMedium = new TypoStyle(11, 500, 15, 0.8);
   static readonly labelSmall = new TypoStyle(10, 500, 13, 1.2);

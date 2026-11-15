@@ -54,6 +54,7 @@ export struct NowPlayingScreen {
   @Local commentDraft: string = '';
   @Local pageIndex: number = 0;
   private moreSheet: SheetController = new SheetController();
+  private swiperController: SwiperController = new SwiperController();
   private trackId: number = -1;
   private backHandler: () => boolean = (): boolean => false;
 
@@ -75,7 +76,7 @@ export struct NowPlayingScreen {
         return true;
       }
       if (this.pageIndex !== 0) {
-        this.pageIndex = 0;
+        this.goToPage(0);
         return true;
       }
       this.onClose();
@@ -87,6 +88,14 @@ export struct NowPlayingScreen {
   aboutToDisappear(): void {
     Theme.popLightBars();
     Backs.pop(this.backHandler);
+  }
+
+  /** 封面与歌词之间左右滑动切换；直接改 index 会瞬跳，没有过渡动画。 */
+  private goToPage(index: number): void {
+    if (this.pageIndex === index) {
+      return;
+    }
+    this.swiperController.changeIndex(index, true);
   }
 
   private syncTrack(): void {
@@ -136,14 +145,15 @@ export struct NowPlayingScreen {
         })
 
         Stack({ alignContent: Alignment.TopStart }) {
-          Swiper() {
+          Swiper(this.swiperController) {
             CoverPage({
               track: this.t(),
               base: this.baseColor,
               currentLine: this.currentLyricLine(),
+              currentTranslation: this.currentLyricTranslation(),
               hasLyric: this.currentLyricLine().length > 0,
               onOpenLyrics: (): void => {
-                this.pageIndex = 1;
+                this.goToPage(1);
               },
               onCollapseDragStart: (): void => this.onCollapseDragStart(),
               onCollapseDrag: (f: number): void => this.onCollapseDrag(f),
@@ -177,8 +187,7 @@ export struct NowPlayingScreen {
           lyricActive: this.pageIndex === 1,
           dragMs: this.dragMs,
           onToggleLyrics: (): void => {
-            const target = this.pageIndex === 0 ? 1 : 0;
-            this.pageIndex = target;
+            this.goToPage(this.pageIndex === 0 ? 1 : 0);
           },
           onOpenComments: (): void => {
             this.sheet = 'comments';
@@ -344,20 +353,30 @@ export struct NowPlayingScreen {
     return this.dragMs >= 0 ? this.dragMs : this.state.positionMs;
   }
 
-  private currentLyricLine(): string {
+  private currentLyric(): LyricLine | null {
     if (this.extras.lyrics.trackId !== this.trackId) {
-      return '';
+      return null;
     }
     const pos = this.displayPosition();
-    let text = '';
+    let found: LyricLine | null = null;
     for (const line of this.extras.lyrics.lines) {
       if (line.timeMs <= pos) {
-        text = line.text;
+        found = line;
       } else {
         break;
       }
     }
-    return text;
+    return found;
+  }
+
+  private currentLyricLine(): string {
+    const line = this.currentLyric();
+    return line === null ? '' : line.text;
+  }
+
+  private currentLyricTranslation(): string {
+    const line = this.currentLyric();
+    return line === null ? '' : line.translation;
   }
 }
 
@@ -448,6 +467,7 @@ struct CoverPage {
   @Param track: Track = new Track(0, 0, '', 0, '', '', '', '', 0, 0, false, 0);
   @Param base: string = '#FF14161B';
   @Param currentLine: string = '';
+  @Param currentTranslation: string = '';
   @Param hasLyric: boolean = false;
   @Event onOpenLyrics: () => void = () => {
   };
@@ -490,16 +510,28 @@ struct CoverPage {
 
       Column({ space: 0 }) {
         if (this.hasLyric && this.currentLine.length > 0) {
-          InkText({
-            text: this.currentLine,
-            style: Typo.titleMedium,
-            color: withAlpha(WHITE, 0.92),
-            alignTo: TextAlign.Center,
-            lines: 2,
-          })
-            .borderRadius(10)
-            .padding({ left: 10, right: 10, top: 6, bottom: 6 })
-            .onClick(() => this.onOpenLyrics())
+          Column({ space: 0 }) {
+            InkText({
+              text: this.currentLine,
+              style: Typo.titleMedium,
+              color: withAlpha(WHITE, 0.92),
+              alignTo: TextAlign.Center,
+              lines: 2,
+            })
+            if (this.currentTranslation.length > 0) {
+              InkText({
+                text: this.currentTranslation,
+                style: Typo.bodyCompact,
+                color: withAlpha(WHITE, 0.62),
+                alignTo: TextAlign.Center,
+                lines: 2,
+              })
+                .margin({ top: 4 })
+            }
+          }
+          .borderRadius(10)
+          .padding({ left: 10, right: 10, top: 6, bottom: 6 })
+          .onClick(() => this.onOpenLyrics())
         } else {
           InkText({
             text: '左右滑动查看歌词',
@@ -619,12 +651,23 @@ struct LyricPage {
                   lines: 3,
                 })
                   .width('100%')
-                  .padding({ top: 8, bottom: 8 })
-                  .onClick(() => this.onSeek(line.timeMs))
+                  .padding({ top: 8, bottom: line.translation.length > 0 ? 2 : 8 })
+                if (line.translation.length > 0) {
+                  InkText({
+                    text: line.translation,
+                    style: Typo.bodyCompact,
+                    color: index === this.activeLine ? withAlpha(WHITE, 0.7) : withAlpha(WHITE, 0.32),
+                    weight: 400,
+                    lines: 2,
+                  })
+                    .width('100%')
+                    .padding({ bottom: 8 })
+                }
               }
               .width('100%')
+              .onClick(() => this.onSeek(line.timeMs))
             }
-          }, (line: LyricLine) => `${line.timeMs}-${line.text}`)
+          }, (line: LyricLine) => `${line.timeMs}-${line.text}-${line.translation}`)
           ListItem() {
             Column().width('100%').height(48)
           }
@@ -1014,13 +1057,17 @@ struct QueueTrackRow {
           color: this.isCurrent ? WHITE : withAlpha(WHITE, 0.9),
           lines: 1,
           weight: this.isCurrent ? 700 : 500,
+          marquee: true,
         })
+          .width('100%')
         InkText({
           text: this.track.artistLabel.length > 0 ? this.track.artistLabel : '未知艺人',
           style: Typo.bodySmall,
           color: withAlpha(WHITE, 0.48),
           lines: 1,
+          marquee: true,
         })
+          .width('100%')
       }
       .alignItems(HorizontalAlign.Start)
       .layoutWeight(1)
